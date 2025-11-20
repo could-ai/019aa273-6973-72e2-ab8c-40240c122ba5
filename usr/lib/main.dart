@@ -25,11 +25,30 @@ class ExpressApp extends StatelessWidget {
           primary: Color(0xFF00F7FF), // Cyan neon for AI feel
           secondary: Color(0xFFFF0055), // Pink neon for TikTok feel
           surface: Color(0xFF121212),
+          onSurface: Colors.white,
         ),
         useMaterial3: true,
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
           elevation: 0,
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(color: Colors.white),
+          bodyMedium: TextStyle(color: Colors.white70),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color(0xFF00F7FF),
+            foregroundColor: Colors.black,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+          ),
         ),
       ),
       // Routing setup for safety and web preview compatibility

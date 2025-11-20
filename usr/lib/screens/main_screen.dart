@@ -34,47 +34,103 @@ class _MainScreenState extends State<MainScreen> {
         index: _selectedIndex,
         children: _screens,
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.black,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey.shade600,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        items: [
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.home_filled),
-            label: 'Home',
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.black, Colors.grey.shade900],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
           ),
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Discover',
+          border: Border(
+            top: BorderSide(color: Colors.grey.shade800, width: 0.5),
           ),
-          BottomNavigationBarItem(
-            icon: Container(
-              width: 45,
-              height: 30,
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [Color(0xFF00F7FF), Color(0xFFFF0055)],
-                ),
-                borderRadius: BorderRadius.circular(8),
+        ),
+        child: BottomNavigationBar(
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.transparent,
+          selectedItemColor: const Color(0xFF00F7FF),
+          unselectedItemColor: Colors.grey.shade500,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          elevation: 0,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home_filled,
+                size: 28,
               ),
-              child: const Icon(Icons.add, color: Colors.black, size: 20),
+              label: 'Home',
+              activeIcon: Icon(
+                Icons.home_filled,
+                size: 32,
+                color: const Color(0xFF00F7FF),
+              ),
             ),
-            label: '',
-          ),
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.message_outlined),
-            label: 'Inbox',
-          ),
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: 'Profile',
-          ),
-        ],
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.search,
+                size: 28,
+              ),
+              label: 'Discover',
+              activeIcon: Icon(
+                Icons.search,
+                size: 32,
+                color: const Color(0xFF00F7FF),
+              ),
+            ),
+            BottomNavigationBarItem(
+              icon: Container(
+                width: 55,
+                height: 35,
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFF00F7FF), Color(0xFFFF0055)],
+                  ),
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.cyan.withOpacity(0.3),
+                      blurRadius: 10,
+                      spreadRadius: 2,
+                    ),
+                  ],
+                ),
+                child: const Icon(
+                  Icons.add,
+                  color: Colors.black,
+                  size: 24,
+                ),
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.message_outlined,
+                size: 28,
+              ),
+              label: 'Inbox',
+              activeIcon: Icon(
+                Icons.message,
+                size: 32,
+                color: const Color(0xFF00F7FF),
+              ),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person_outline,
+                size: 28,
+              ),
+              label: 'Profile',
+              activeIcon: Icon(
+                Icons.person,
+                size: 32,
+                color: const Color(0xFF00F7FF),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
