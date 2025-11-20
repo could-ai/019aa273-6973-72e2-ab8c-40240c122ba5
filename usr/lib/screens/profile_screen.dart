@@ -55,11 +55,11 @@ class ProfileScreen extends StatelessWidget {
                 SliverToBoxAdapter(
                   child: Column(
                     children: [
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 100), // Added padding for AppBar
                       Container(
                         padding: const EdgeInsets.all(4),
-                        decoration: BoxDecoration(
-                          gradient: const LinearGradient(
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
                             colors: [Color(0xFF00F7FF), Color(0xFFFF0055)],
                           ),
                           shape: BoxShape.circle,
@@ -299,9 +299,9 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   _SliverAppBarDelegate(this._tabBar);
 
   @override
-  double get minExtent => _tabBar.preferredSize.height ?? 48.0;
+  double get minExtent => 50.0;
   @override
-  double get maxExtent => _tabBar.preferredSize.height ?? 48.0;
+  double get maxExtent => 50.0;
 
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
